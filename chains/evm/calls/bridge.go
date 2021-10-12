@@ -9,6 +9,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/rs/zerolog/log"
 )
 
@@ -55,18 +56,6 @@ func PrepareAdminSetGenericResourceInput(
 	return input, nil
 }
 
-func PrepareErc20DepositInput(destDomainID uint8, resourceID [32]byte, data []byte) ([]byte, error) {
-	a, err := abi.JSON(strings.NewReader(consts.BridgeABI))
-	if err != nil {
-		return []byte{}, err
-	}
-	input, err := a.Pack("deposit", destDomainID, resourceID, data)
-	if err != nil {
-		return []byte{}, err
-	}
-	return input, nil
-}
-
 func PrepareAddRelayerInput(relayer common.Address) ([]byte, error) {
 	a, err := abi.JSON(strings.NewReader(consts.BridgeABI))
 	if err != nil {
@@ -78,6 +67,7 @@ func PrepareAddRelayerInput(relayer common.Address) ([]byte, error) {
 	}
 	return input, nil
 }
+
 func PrepareIsRelayerInput(address common.Address) ([]byte, error) {
 	a, err := abi.JSON(strings.NewReader(consts.BridgeABI))
 	if err != nil {
@@ -108,12 +98,39 @@ func ParseIsRelayerOutput(output []byte) (bool, error) {
 	return *b, nil
 }
 
-func Deposit(client ChainClient, fabric TxFabric, bridgeAddress, recipient common.Address, amount *big.Int, resourceID [32]byte, destDomainID uint8) error {
-	data := ConstructErc20DepositData(recipient.Bytes(), amount)
-	input, err := PrepareErc20DepositInput(destDomainID, resourceID, data)
+func ConstructErc20DepositData(destRecipient []byte, amount *big.Int) []byte {
+	var data []byte
+	data = append(data, math.PaddedBigBytes(amount, 32)...)
+	data = append(data, math.PaddedBigBytes(big.NewInt(int64(len(destRecipient))), 32)...)
+	data = append(data, destRecipient...)
+	return data
+}
+
+func ConstructGenericDepositData(metadata []byte) []byte {
+	var data []byte
+	data = append(data, math.PaddedBigBytes(big.NewInt(int64(len(metadata))), 32)...)
+	data = append(data, metadata...)
+	return data
+}
+
+func PrepareDepositInput(destDomainID uint8, resourceID [32]byte, data []byte) ([]byte, error) {
+	a, err := abi.JSON(strings.NewReader(consts.BridgeABI))
+	if err != nil {
+		return []byte{}, err
+	}
+	input, err := a.Pack("deposit", destDomainID, resourceID, data)
+	if err != nil {
+		return []byte{}, err
+	}
+	return input, nil
+}
+
+func Deposit(client ChainClient, fabric TxFabric, bridgeAddress common.Address, resourceID [32]byte, destDomainID uint8, data []byte) error {
+	input, err := PrepareDepositInput(destDomainID, resourceID, data)
 	if err != nil {
 		return err
 	}
+
 	gasLimit := uint64(2000000)
 	h, err := Transact(client, fabric, &bridgeAddress, input, gasLimit)
 	if err != nil {

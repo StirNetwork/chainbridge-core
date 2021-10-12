@@ -11,7 +11,6 @@ import (
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/rs/zerolog/log"
@@ -111,12 +110,4 @@ func Transact(client ChainClient, txFabric TxFabric, to *common.Address, data []
 	}
 	client.UnlockNonce()
 	return tx.Hash(), nil
-}
-
-func ConstructErc20DepositData(destRecipient []byte, amount *big.Int) []byte {
-	var data []byte
-	data = append(data, math.PaddedBigBytes(amount, 32)...)
-	data = append(data, math.PaddedBigBytes(big.NewInt(int64(len(destRecipient))), 32)...)
-	data = append(data, destRecipient...)
-	return data
 }
