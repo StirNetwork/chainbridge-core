@@ -63,7 +63,7 @@ func PrepareErc20EVME2EEnv(ethClient calls.ChainClient, fabric calls.TxFabric, b
 	if err != nil {
 		return common.Address{}, common.Address{}, err
 	}
-	_, err = calls.Transact(ethClient, fabric, &bridgeAddr, registerResourceInput, gasLimit)
+	_, err = calls.Transact(ethClient, fabric, &bridgeAddr, registerResourceInput, gasLimit, big.NewInt(0))
 	if err != nil {
 		return common.Address{}, common.Address{}, err
 	}
@@ -74,7 +74,7 @@ func PrepareErc20EVME2EEnv(ethClient calls.ChainClient, fabric calls.TxFabric, b
 	if err != nil {
 		return common.Address{}, common.Address{}, err
 	}
-	_, err = calls.Transact(ethClient, fabric, &erc20Addr, minInput, gasLimit)
+	_, err = calls.Transact(ethClient, fabric, &erc20Addr, minInput, gasLimit, big.NewInt(0))
 	if err != nil {
 		return common.Address{}, common.Address{}, err
 	}
@@ -84,7 +84,7 @@ func PrepareErc20EVME2EEnv(ethClient calls.ChainClient, fabric calls.TxFabric, b
 	if err != nil {
 		return common.Address{}, common.Address{}, err
 	}
-	_, err = calls.Transact(ethClient, fabric, &erc20Addr, approveInput, gasLimit)
+	_, err = calls.Transact(ethClient, fabric, &erc20Addr, approveInput, gasLimit, big.NewInt(0))
 	if err != nil {
 		return common.Address{}, common.Address{}, err
 	}
@@ -94,7 +94,7 @@ func PrepareErc20EVME2EEnv(ethClient calls.ChainClient, fabric calls.TxFabric, b
 	if err != nil {
 		return common.Address{}, common.Address{}, err
 	}
-	_, err = calls.Transact(ethClient, fabric, &erc20Addr, minterInput, gasLimit)
+	_, err = calls.Transact(ethClient, fabric, &erc20Addr, minterInput, gasLimit, big.NewInt(0))
 	if err != nil {
 		return common.Address{}, common.Address{}, err
 	}
@@ -103,7 +103,7 @@ func PrepareErc20EVME2EEnv(ethClient calls.ChainClient, fabric calls.TxFabric, b
 	if err != nil {
 		return common.Address{}, common.Address{}, err
 	}
-	_, err = calls.Transact(ethClient, fabric, &bridgeAddr, setBurnInput, gasLimit)
+	_, err = calls.Transact(ethClient, fabric, &bridgeAddr, setBurnInput, gasLimit, big.NewInt(0))
 	if err != nil {
 		return common.Address{}, common.Address{}, err
 	}
@@ -143,7 +143,6 @@ func deployBridgeForTest(
 	domainID uint8,
 	treshHold *big.Int,
 ) (common.Address, error) {
-
 	bridgeAddr, err := calls.DeployBridge(c, fabric, domainID, DefaultRelayerAddresses, treshHold)
 	if err != nil {
 		return common.Address{}, fmt.Errorf("Bridge deploy failed: %w", err)
