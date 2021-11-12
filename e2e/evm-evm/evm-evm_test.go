@@ -8,8 +8,8 @@ import (
 	"github.com/stretchr/testify/suite"
 )
 
-const ETHEndpoint1 = "http://localhost:8545"
-const ETHEndpoint2 = "http://localhost:8547"
+const ETHEndpoint1 = "ws://localhost:8546"
+const ETHEndpoint2 = "ws://localhost:8548"
 
 // Alice key is used by the relayer, Eve key is used as admin and depositter
 func TestRunE2ETests(t *testing.T) {
