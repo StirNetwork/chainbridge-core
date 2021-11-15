@@ -11,9 +11,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ChainSafe/chainbridge-core/chains/evm/listener"
-	"github.com/ChainSafe/chainbridge-core/crypto/secp256k1"
-	"github.com/ChainSafe/chainbridge-core/keystore"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/listener"
+	"github.com/StirNetwork/chainbridge-core/crypto/secp256k1"
+	"github.com/StirNetwork/chainbridge-core/keystore"
 
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"

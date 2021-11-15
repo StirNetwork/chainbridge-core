@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/ChainSafe/chainbridge-core/metrics"
+	"github.com/StirNetwork/chainbridge-core/metrics"
 	"github.com/gorilla/mux"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/rs/zerolog/log"

@@ -7,7 +7,7 @@ import (
 
 var (
 	// Flags for running the Chainbridge app
-	ConfigFlagName      = "config"
+	ConfigFlagName      = "chain_config"
 	KeystoreFlagName    = "keystore"
 	BlockstoreFlagName  = "blockstore"
 	FreshStartFlagName  = "fresh"

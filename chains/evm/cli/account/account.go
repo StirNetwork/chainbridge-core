@@ -3,8 +3,8 @@ package account
 import (
 	"bytes"
 
-	"github.com/ChainSafe/chainbridge-core/crypto/secp256k1"
-	accountutils "github.com/ChainSafe/chainbridge-core/keystore/account"
+	"github.com/StirNetwork/chainbridge-core/crypto/secp256k1"
+	accountutils "github.com/StirNetwork/chainbridge-core/keystore/account"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
 )

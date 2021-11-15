@@ -10,9 +10,9 @@ import (
 	"io/ioutil"
 	"path/filepath"
 
-	"github.com/ChainSafe/chainbridge-core/crypto"
-	"github.com/ChainSafe/chainbridge-core/crypto/secp256k1"
-	"github.com/ChainSafe/chainbridge-core/crypto/sr25519"
+	"github.com/StirNetwork/chainbridge-core/crypto"
+	"github.com/StirNetwork/chainbridge-core/crypto/secp256k1"
+	"github.com/StirNetwork/chainbridge-core/crypto/sr25519"
 )
 
 // Decrypt uses AES to decrypt ciphertext with the symmetric key deterministically created from `password`

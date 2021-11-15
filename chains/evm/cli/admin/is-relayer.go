@@ -5,10 +5,10 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/ChainSafe/chainbridge-core/chains/evm/calls"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/cli/flags"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/evmclient"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/evmtransaction"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/calls"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/cli/flags"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/evmclient"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/evmtransaction"
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/rs/zerolog/log"
@@ -19,7 +19,7 @@ var isRelayerCmd = &cobra.Command{
 	Use:   "is-relayer",
 	Short: "Check if an address is registered as a relayer",
 	Long:  "Check if an address is registered as a relayer",
-	RunE:   func(cmd *cobra.Command, args []string) error {
+	RunE: func(cmd *cobra.Command, args []string) error {
 		txFabric := evmtransaction.NewTransaction
 		return IsRelayer(cmd, args, txFabric)
 	},
@@ -105,4 +105,3 @@ func IsRelayer(cmd *cobra.Command, args []string, txFabric calls.TxFabric) error
 	}
 	return nil
 }
-

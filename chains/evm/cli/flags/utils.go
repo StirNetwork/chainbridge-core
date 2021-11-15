@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ChainSafe/chainbridge-core/chains/evm/calls/consts"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/calls/consts"
 
-	"github.com/ChainSafe/chainbridge-core/keystore"
+	"github.com/StirNetwork/chainbridge-core/keystore"
 
-	"github.com/ChainSafe/chainbridge-core/crypto/secp256k1"
+	"github.com/StirNetwork/chainbridge-core/crypto/secp256k1"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
 )

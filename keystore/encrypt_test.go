@@ -11,8 +11,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ChainSafe/chainbridge-core/crypto/secp256k1"
-	"github.com/ChainSafe/chainbridge-core/crypto/sr25519"
+	"github.com/StirNetwork/chainbridge-core/crypto/secp256k1"
+	"github.com/StirNetwork/chainbridge-core/crypto/sr25519"
 )
 
 func TestEncryptAndDecrypt(t *testing.T) {

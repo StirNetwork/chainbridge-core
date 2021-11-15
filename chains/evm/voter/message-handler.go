@@ -8,7 +8,7 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/ChainSafe/chainbridge-core/relayer"
+	"github.com/StirNetwork/chainbridge-core/relayer"
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"

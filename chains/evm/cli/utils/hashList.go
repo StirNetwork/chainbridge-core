@@ -6,8 +6,8 @@ import (
 	"math/big"
 	"strconv"
 
-	"github.com/ChainSafe/chainbridge-core/chains/evm/cli/flags"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/evmclient"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/cli/flags"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/evmclient"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"
 )

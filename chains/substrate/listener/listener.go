@@ -7,9 +7,9 @@ import (
 
 	"github.com/status-im/keycard-go/hexutils"
 
-	"github.com/ChainSafe/chainbridge-core/blockstore"
-	"github.com/ChainSafe/chainbridge-core/chains/substrate"
-	"github.com/ChainSafe/chainbridge-core/relayer"
+	"github.com/StirNetwork/chainbridge-core/blockstore"
+	"github.com/StirNetwork/chainbridge-core/chains/substrate"
+	"github.com/StirNetwork/chainbridge-core/relayer"
 	"github.com/centrifuge/go-substrate-rpc-client/types"
 	"github.com/rs/zerolog/log"
 )

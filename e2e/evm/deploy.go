@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ChainSafe/chainbridge-core/chains/evm/calls"
-	"github.com/ChainSafe/chainbridge-core/keystore"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/calls"
+	"github.com/StirNetwork/chainbridge-core/keystore"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/rs/zerolog/log"
 )

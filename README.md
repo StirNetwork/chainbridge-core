@@ -27,7 +27,7 @@ The chainbridge-core-example currently supports two modules:
 
 ## Usage
 Since chainbridge-core is the modular framework it will require writing some code to get it running. Here you can find some examples
-[Example](https://github.com/ChainSafe/chainbridge-core-example)
+[Example](https://github.com/StirNetwork/chainbridge-core-example)
 
 
 ## EVM-CLI

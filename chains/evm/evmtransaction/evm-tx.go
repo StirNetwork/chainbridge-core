@@ -4,7 +4,7 @@ import (
 	"crypto/ecdsa"
 	"math/big"
 
-	"github.com/ChainSafe/chainbridge-core/chains/evm/evmclient"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/evmclient"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"

@@ -1,4 +1,4 @@
-module github.com/ChainSafe/chainbridge-core
+module github.com/StirNetwork/chainbridge-core
 
 go 1.15
 

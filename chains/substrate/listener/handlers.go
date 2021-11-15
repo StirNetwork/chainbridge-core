@@ -3,8 +3,8 @@ package listener
 import (
 	"fmt"
 
-	"github.com/ChainSafe/chainbridge-core/chains/substrate"
-	"github.com/ChainSafe/chainbridge-core/relayer"
+	"github.com/StirNetwork/chainbridge-core/chains/substrate"
+	"github.com/StirNetwork/chainbridge-core/relayer"
 )
 
 func FungibleTransferHandler(sourceID uint8, evtI interface{}) (*relayer.Message, error) {

@@ -1,13 +1,13 @@
 package cli
 
 import (
-	"github.com/ChainSafe/chainbridge-core/chains/evm/cli/account"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/cli/admin"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/cli/bridge"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/cli/deploy"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/cli/erc20"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/cli/erc721"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/cli/utils"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/cli/account"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/cli/admin"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/cli/bridge"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/cli/deploy"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/cli/erc20"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/cli/erc721"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/cli/utils"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

@@ -8,9 +8,9 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/ChainSafe/chainbridge-core/chains/evm/evmclient"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/evmclient"
 
-	"github.com/ChainSafe/chainbridge-core/relayer"
+	"github.com/StirNetwork/chainbridge-core/relayer"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/rs/zerolog/log"
 )

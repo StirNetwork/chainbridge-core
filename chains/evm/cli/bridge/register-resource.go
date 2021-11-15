@@ -3,10 +3,11 @@ package bridge
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/calls"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/cli/flags"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/evmclient"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/evmtransaction"
+
+	"github.com/StirNetwork/chainbridge-core/chains/evm/calls"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/cli/flags"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/evmclient"
+	"github.com/StirNetwork/chainbridge-core/chains/evm/evmtransaction"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/rs/zerolog/log"
 	"github.com/spf13/cobra"

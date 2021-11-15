@@ -2,13 +2,14 @@ package voter
 
 import (
 	"context"
-	"github.com/ChainSafe/chainbridge-core/chains/evm/evmclient"
 	"math/big"
 	"strings"
 
+	"github.com/StirNetwork/chainbridge-core/chains/evm/evmclient"
+
 	"github.com/status-im/keycard-go/hexutils"
 
-	"github.com/ChainSafe/chainbridge-core/relayer"
+	"github.com/StirNetwork/chainbridge-core/relayer"
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"

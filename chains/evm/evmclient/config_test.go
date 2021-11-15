@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ChainSafe/chainbridge-core/config"
+	"github.com/StirNetwork/chainbridge-core/config"
 )
 
 func TestLoadJSONConfig(t *testing.T) {

@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ChainSafe/chainbridge-core/config"
+	"github.com/StirNetwork/chainbridge-core/config"
 	"github.com/syndtr/goleveldb/leveldb"
 )
 
