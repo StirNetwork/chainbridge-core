@@ -49,7 +49,7 @@ func (s *ProposalStatusTestSuite) TestProposalStatusFailedContractCall() {
 
 	status, err := calls.ProposalStatus(s.mockContractCaller, &proposal.Proposal{})
 
-	s.Equal(relayer.ProposalStatusInactive, status)
+	s.Equal(relayer.ProposalStatus{}, status)
 	s.NotNil(err)
 }
 
@@ -58,7 +58,7 @@ func (s *ProposalStatusTestSuite) TestProposalStatusFailedUnpack() {
 
 	status, err := calls.ProposalStatus(s.mockContractCaller, &proposal.Proposal{})
 
-	s.Equal(relayer.ProposalStatusInactive, status)
+	s.Equal(relayer.ProposalStatus{}, status)
 	s.NotNil(err)
 }
 
@@ -68,6 +68,7 @@ func (s *ProposalStatusTestSuite) TestProposalStatusSuccessfulCall() {
 
 	status, err := calls.ProposalStatus(s.mockContractCaller, &proposal.Proposal{})
 
-	s.Equal(relayer.ProposalStatusInactive, status)
 	s.Nil(err)
+	s.Equal(int64(0), status.ProposedBlock.Int64())
+	s.Equal(int64(0), status.YesVotes.Int64())
 }
